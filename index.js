@@ -142,4 +142,9 @@ function whatTypeOfAngle(angle) {
         return typeOfAngle = 'right'
     }
 }
-console.log(whatTypeOfAngle(90))
+// console.log(whatTypeOfAngle(90))
+
+function indexOfTheGreatest (arr) {
+    let greatestNumber = arr[0]
+    arr.map(x => )
+}
