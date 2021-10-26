@@ -4,9 +4,10 @@ function sumOfTwoIntergers (int1, int2) {
         return (int1 + int2) * 3
     }
     else {
-        return (int1 = int2)
+        return (int1 + int2)
     }
 }
+
 
 //02
 function checkTwoInt (int1, int2) {
@@ -117,22 +118,37 @@ console.log(contains1or3([7, 5]))
 
 //11
 // let arr =['abc', 'abcd', 'abcde']
+// function longestStr (arrOfstr) {
+
+//     let longestStr = arrOfstr[0].length
+
+//     arrOfstr.map(x => longestStr = Math.max(longestStr, x.length))
+
+//     result = arrOfstr.filter(x => x.length === longestStr)
+
+//     return result
+// }
+
+
+
 function longestStr (arrOfstr) {
-
-    let longestStr = arrOfstr[0].length
-
-    arrOfstr.map(x => longestStr = Math.max(longestStr, x.length))
-
-    result = arrOfstr.filter(x => x.length === longestStr)
-
-    return result
+    let currentStr = 0
+    let newStrFound = ''
+    for (let i = 0; i < arrOfstr.length; i++) {
+        const str = arrOfstr[i]
+        if (currentStr < str.length) {
+            currentStr = str.length 
+            newStrFound = str
+        }
+    }
+    return newStrFound
 }
 console.log(longestStr(['abc', 'abcd', 'abcde']))
 
 //12
 function whatTypeOfAngle(angle) {
     let typeOfAngle = ''
-    if (angle >= 0 && angle <= 90) {
+    if (angle >= 0 && angle <= 90) {         
         return typeOfAngle = 'acute'
     }else if (angle >= 90 && angle <= 180) {
         return typeOfAngle = 'obtuse'
@@ -144,7 +160,36 @@ function whatTypeOfAngle(angle) {
 }
 // console.log(whatTypeOfAngle(90))
 
-function indexOfTheGreatest (arr) {
-    let greatestNumber = arr[0]
-    arr.map(x => )
+//13
+function indexOfTheGreatest (arrOfInt) {
+    let greatestNumber = 0
+    for (let i = 0; i < arrOfInt.length; i++) {
+        const currentNum = arrOfInt[i]
+        if (greatestNumber < currentNum) {
+            greatestNumber = currentNum
+        }
+    }
+    return greatestNumber
 }
+
+
+//14
+function largestEvenNum (arrOfInt) {
+    let greatestEvenNumber = []
+    for (let i = 0; i < arrOfInt.length; i++) {
+        const currentNum = arrOfInt[i]
+        if ((currentNum % 2 === 1) && (currentNum > greatestEvenNumber)) {
+            greatestEvenNumber.push(currentNum)
+        }
+    }
+    return greatestNumber
+}
+console.log(indexOfTheGreatest([2, 3, 7, 1, , 9]))
+
+// 15) Create a function to check from two given integers, whether one is positive and another one is negative.
+function positiveAndNegative(n1, n2) {
+    return (n1 < 0 && n2 > 0) || (n1 > 0 && n2 < 0);
+}
+console.log(positiveAndNegative(-1, 3));
+
+//16
